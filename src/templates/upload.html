@@ -7,13 +7,25 @@
   </head>
   <body>
     <h1>File uploader</h1>
+    <p>PDF FILE</p>
     <form
-      action="{{url_for('upload')}}"
+      action="{{url_for('upload_pdf')}}"
       id="upload-form"
       method="POST"
       enctype="multipart/form-data"
     >
-      <input type="file" name="file" placeholder="File" />
+      <input type="file" name="file" placeholder="PDF FILE" label="PDF FILE" />
+      <input type="submit" value="Submit" />
+    </form>
+    <br />
+    <p>TEXT FILE</p>
+    <form
+      action="{{url_for('upload_text')}}"
+      id="upload-form"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+      <input type="file" name="file" placeholder="TEXT FILE" label="PDF FILE" />
       <input type="submit" value="Submit" />
     </form>
   </body>

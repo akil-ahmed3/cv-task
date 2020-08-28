@@ -7,5 +7,12 @@
   </head>
   <body>
     <h1>Upload is complete</h1>
+    {% for item in toBeSend %}
+    <p>{{item}}</p>
+    <script>
+      console.log(`{{item}}`);
+    </script>
+    <br />
+    {% endfor %}
   </body>
 </html>
