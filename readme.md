@@ -30,11 +30,11 @@ For task four I have used flask
 Process:
 
 1. there are two routes
-   *http://127.0.0.1:5000/upload_text*
-   *http://127.0.0.1:5000/upload_pdf*
+   - *http://127.0.0.1:5000/upload_text* nd
+   - *http://127.0.0.1:5000/upload_pdf*
 2. Open terminal and type
-   *cd src
-   *flask run
+   - cd src
+   - flask run
 3. Open this link in the browser *http://127.0.0.1:5000*
 4. There are two fields one is to upload pdf and other is for text
-5. The result you can see in you terminal, browser console or (webpage(this one is ugly)
+5. The result you can see in you terminal, browser console or webpage(this one is ugly)
