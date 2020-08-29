@@ -29,7 +29,7 @@ For fourth task I have used flask and jinja2
 Process:
 
 1. there are two routes
-   - *http://127.0.0.1:5000/upload_text* nd
+   - *http://127.0.0.1:5000/upload_text*
    - *http://127.0.0.1:5000/upload_pdf*
 2. Open terminal and type
    - cd src
