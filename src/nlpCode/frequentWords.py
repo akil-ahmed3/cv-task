@@ -28,7 +28,7 @@ def frequentAndEssentialWords(text):
         columns=["TF-IDF"],
     )
     df = df.sort_values("TF-IDF", ascending=False)
-    tf = df.head(5)
+    tf = df.head(10)
 
     ngram_vectorizer = CountVectorizer(
         analyzer="word", ngram_range=(1, 1), min_df=1, stop_words="english"

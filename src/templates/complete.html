@@ -3,16 +3,54 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        text-align: center;
+      }
+      .essential {
+        max-width: 40%;
+        text-align: left;
+      }
+      .frequent {
+        max-width: 40%;
+      }
+      .main {
+        display: flex;
+        justify-content: space-around;
+        text-align: left;
+      }
+      p {
+        font-size: 24px;
+      }
+      li {
+        font-size: 24px;
+        list-style: none;
+      }
+    </style>
     <title>Document</title>
   </head>
   <body>
     <h1>Upload is complete</h1>
-    {% for item in toBeSend %}
-    <p>{{item}}</p>
-    <script>
-      console.log(`{{item}}`);
-    </script>
+    <div class="main">
+      <div class="essential">
+        <p><b>MOST ESSENTIAL WORDS </b></p>
+        {% for item in toBeSend['tf_idf'].keys() %}
+
+        <ul>
+          <li>{{item}} - {{toBeSend['tf_idf'][item]}}</li>
+        </ul>
+        {% endfor %}
+      </div>
+      <div class="frequent">
+        <p><b>MOST FREQUENT WORDS </b></p>
+        {% for item in toBeSend['frequent'].keys() %}
+        <ul>
+          <li>{{item}} - {{toBeSend['frequent'][item]}}</li>
+        </ul>
+        {% endfor %}
+      </div>
+    </div>
+
     <br />
-    {% endfor %}
   </body>
 </html>

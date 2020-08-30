@@ -1,6 +1,7 @@
 import json
 import pdftotext
 import pandas as pd
+import re
 
 import os
 
@@ -16,7 +17,10 @@ def pdfToCsv(filename, dir):
     df.to_csv(filename + ".csv")
     dff = pd.read_csv(filename + ".csv")
 
-    return ",".join(dff.Contact)
+    text = ",".join(dff.Contact)
+    new_text = re.sub(r"[^a-zA-Z]+", " ", text).lower()
+
+    return new_text
 
 
 def textToCsv(filename):
@@ -25,4 +29,7 @@ def textToCsv(filename):
     df.to_csv(filename + ".csv")
     dff = pd.read_csv(filename + ".csv")
 
-    return ",".join(dff.Contact)
+    text = ",".join(dff.Contact)
+    new_text = re.sub(r"[^a-zA-Z]+", " ", text).lower()
+
+    return new_text

@@ -16,7 +16,7 @@ for filename in os.listdir("./profiles"):
             {"data": pdfToCsv(filename, "./profiles/")}, ignore_index=True
         )
         os.remove(filename + ".csv")
-        # os.remove("./output.txt")
+        os.remove("./output.txt")
         continue
     else:
         continue

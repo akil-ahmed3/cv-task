@@ -41,11 +41,23 @@ def upload_pdf():
 
         text = data.data[0]
 
-        toBeSend = frequentAndEssentialWords(text)
+        (tf, frequent) = frequentAndEssentialWords(text)
 
-        print(toBeSend)
+        print(tf.to_json())
+        print(frequent.to_json())
 
-        return render_template("complete.html", toBeSend=toBeSend)
+        new_tf = json.loads(tf.to_json())
+        new_frequent = json.loads(frequent.to_json())
+        new_frequent_dict = {}
+
+        for f in new_frequent["0"].keys():
+            new_frequent_dict[new_frequent["0"][f]] = new_frequent["1"][f]
+
+        to_be_send = {"tf_idf": new_tf["TF-IDF"], "frequent": new_frequent_dict}
+
+        print(to_be_send)
+
+        return render_template("complete.html", toBeSend=to_be_send)
 
 
 @app.route("/upload_text", methods=["POST"])
@@ -72,11 +84,16 @@ def upload_text():
 
         text = data.data[0]
 
-        toBeSend = frequentAndEssentialWords(text)
+        (tf, frequent) = frequentAndEssentialWords(text)
 
-        print(toBeSend)
+        new_tf = tf.to_json(tf)
+        new_frequent = frequent.to_json(frequent)
 
-        return render_template("complete.html", toBeSend=toBeSend)
+        to_be_send = {"tf": new_tf, "frequent": new_frequent}
+
+        print(to_be_send)
+
+        return render_template("complete.html", toBeSend=to_be_send)
 
 
 if __name__ == "__main__":
