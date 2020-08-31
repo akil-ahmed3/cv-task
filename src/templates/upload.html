@@ -4,6 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Upload</title>
+    <style>
+      body {
+        text-align: center;
+      }
+      .essential {
+        max-width: 40%;
+        text-align: left;
+      }
+      .frequent {
+        max-width: 40%;
+        text-align: left;
+      }
+      .main {
+        display: flex;
+        justify-content: space-around;
+        text-align: left;
+      }
+      p {
+        font-size: 24px;
+      }
+      li {
+        font-size: 24px;
+        list-style: none;
+      }
+    </style>
   </head>
   <body>
     <h1>File uploader</h1>
@@ -28,5 +53,34 @@
       <input type="file" name="file" placeholder="TEXT FILE" label="PDF FILE" />
       <input type="submit" value="Submit" />
     </form>
+    <div>
+      <h1 style="padding-top: 20px">FIFTY PDFS DATA</h1>
+      {% for items in data %}
+      <hr />
+      <h2>PROFILE {{ data.index(items) + 1 }}</h2>
+      <div class="main">
+        <div class="essential">
+          <p>
+            <b>MOST ESSENTIAL WORDS </b>
+          </p>
+          {% for item in items['tf_idf'].keys() %}
+
+          <ul>
+            <li>{{item}} - {{items['tf_idf'][item]}}</li>
+          </ul>
+          {% endfor %}
+        </div>
+        <div class="frequent">
+          <p><b>MOST FREQUENT WORDS </b></p>
+          {% for item in items['frequent'].keys() %}
+          <ul>
+            <li>{{item}} - {{items['frequent'][item]}}</li>
+          </ul>
+          {% endfor %}
+        </div>
+      </div>
+      <hr />
+      {% endfor %}
+    </div>
   </body>
 </html>
