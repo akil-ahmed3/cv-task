@@ -9,10 +9,10 @@
 To see task two:
 
 1. Open your terminal
-2. type
+2. Type
    - `cd src`
    - `flask run`
-3. open this url (http://127.0.0.1:5000)
+3. Open this url (http://127.0.0.1:5000)
 4. Here you can see Two things
    - From for uploading new files, and
    - 50 pdfs, divided into two tables "MOST ESSENTIAL WORDS" and "MOST FREQUENT WORDS".
