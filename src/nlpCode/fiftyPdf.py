@@ -1,5 +1,5 @@
-from nlpCode.pdfToCsv import *
-from nlpCode.frequentWords import *
+from src.nlpCode.pdfToCsv import *
+from src.nlpCode.frequentWords import *
 
 import json
 import pdftotext

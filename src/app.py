@@ -2,9 +2,9 @@ import os
 import sys
 
 from flask import Flask, jsonify, request, render_template
-from nlpCode.pdfToCsv import *
-from nlpCode.frequentWords import *
-from nlpCode.fiftyPdf import *
+from src.nlpCode.pdfToCsv import *
+from src.nlpCode.frequentWords import *
+from src.nlpCode.fiftyPdf import *
 
 app = Flask(__name__)
 
@@ -26,7 +26,7 @@ def format_data(tf, frequent):
 
 @app.route("/")
 def index():
-    data = fifty_data_func("../profiles/")
+    data = fifty_data_func("./profiles/")
     fify_pdf_array = []
     for item in data:
         (tf, frequent) = item
