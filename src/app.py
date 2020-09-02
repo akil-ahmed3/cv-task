@@ -2,9 +2,9 @@ import os
 import sys
 
 from flask import Flask, jsonify, request, render_template
-from src.nlpCode.pdfToCsv import *
-from src.nlpCode.frequentWords import *
-from src.nlpCode.fiftyPdf import *
+from nlpCode.pdfToCsv import *
+from nlpCode.frequentWords import *
+from nlpCode.fiftyPdf import *
 
 app = Flask(__name__)
 
