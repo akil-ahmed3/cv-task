@@ -95,5 +95,5 @@ def upload_text():
         return render_template("complete.html", toBeSend=to_be_send)
 
 
-if __name__ == "__main__":
-    app.run(port=5000, debug=True)
+# if __name__ == "__main__":
+#     app.run(port=5000, debug=True)
