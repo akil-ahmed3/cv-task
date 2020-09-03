@@ -26,6 +26,11 @@ def format_data(tf, frequent):
 
 @app.route("/")
 def index():
+    return render_template("index.html")
+
+
+@app.route("/fifty_pdf")
+def fifty_pdf():
     data = fifty_data_func("./profiles/")
     fify_pdf_array = []
     for item in data:
